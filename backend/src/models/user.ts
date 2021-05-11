@@ -20,9 +20,9 @@ interface UserInstance extends Model<UserAttributes, UserCreationAttributes>, Us
 const User = sequelize.define<UserInstance>("User", {
   id: {
     allowNull: false,
-    autoIncrement: false,
+    autoIncrement: true,
     primaryKey: true,
-    type: DataTypes.UUID,
+    type: DataTypes.INTEGER,
     unique: true,
   },
   name: {
@@ -30,7 +30,7 @@ const User = sequelize.define<UserInstance>("User", {
     type: DataTypes.STRING,
   },
   email: {
-    allowNull: false,    
+    allowNull: false,
     unique: true,
     type: DataTypes.STRING,
   },

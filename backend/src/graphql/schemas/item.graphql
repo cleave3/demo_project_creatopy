@@ -1,0 +1,32 @@
+type Item {
+  id: Int!
+  title: String!
+  user_id: Int!
+  createdAt: String!
+  updateAt: String
+}
+
+extend type Query {
+  items: [ItemResponse]!
+}
+
+extend type Mutation {
+  addItem(title: String!): ItemResponse!
+  removeItem(itemId: Int!): RemoveItemResponse!
+}
+
+type Creator {
+  name: String
+}
+
+type ItemResponse {
+  id: Int!
+  title: String!
+  creator: Creator!
+  createdAt: String!
+}
+
+type RemoveItemResponse {
+  id: Int!
+  title: String!
+}

@@ -4,7 +4,7 @@ import sequelize from ".";
 interface ItemAttributes {
     id: number;
     title: string;
-    user_id: string;
+    user_id: number;
 }
 
 interface ItemCreationAttributes extends Optional<ItemAttributes, "id"> { }
@@ -27,7 +27,7 @@ const Item = sequelize.define<ItemInstance>("Item", {
     },
     user_id: {
         allowNull: false,
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
     },
 })
 
