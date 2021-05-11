@@ -1,0 +1,29 @@
+.auth-container {
+  height: calc(100vh - 200px);
+  display: grid;
+  place-items: center;
+}
+
+.auth-form-container {
+  width: 500px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.auth-switch-button {
+  border: none;
+  width: 50%;
+  border-bottom: 2px solid gray;
+  background: transparent;
+  transition: all 0.2 ease-in-out;
+}
+
+.auth-switch-button.active {
+  border-bottom: 2px solid #17a2b8;
+}
+
+@media (max-width: 768px) {
+  .auth-form-container {
+    width: 98%;
+  }
+}
