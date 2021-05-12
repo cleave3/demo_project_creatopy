@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Fragment, useEffect, SyntheticEvent, useRef } from "react"
 import ListItem from "../../components/ListItem"
 import { toastr } from "../../notification/notify";
@@ -8,8 +9,6 @@ const Dashboard = () => {
     const title = useRef<HTMLInputElement>();
     const { user: { name, token }, items: { loading, submitting, items } } = useAppSelector((state) => state);
     const dispatch = useAppDispatch();
-
-    console.log(submitting)
 
     const getUserItems = () => {
         const data = {
@@ -80,7 +79,7 @@ const Dashboard = () => {
                                 <div className="d-flex justify-content-center m-2">
                                     <button className="btn btn-info rounded w-50" disabled={submitting}>
                                         {submitting && "Submitting..."}
-                                        {!submitting && "Add"}
+                                        {!submitting && "Add"} {" "}
                                         {!submitting && <i className="fas fa-plus-circle"></i>}
                                     </button>
                                 </div>

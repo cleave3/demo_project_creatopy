@@ -13,7 +13,7 @@ type ItemState = {
 
 type ItemAction = {
     type: string
-    items: IItem
+    payload: IItem
 }
 
 type UserState = {

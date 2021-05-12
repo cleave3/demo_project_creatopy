@@ -1,4 +1,3 @@
-import { useHistory } from 'react-router';
 import { Http } from '../../Http/Http';
 import { toastr } from '../../notification/notify';
 import * as userTypes from '../types/Types';

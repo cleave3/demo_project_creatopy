@@ -72,10 +72,10 @@ const Login = ({ switchMode }) => {
                     {loading && <i className="fas fa-pulse fa-spinner text-white"></i>}
                 </button>
                 <div>
-                    <small className="m-1 text-left">Forgot Password ? <span><Link to="/forgotpassword">Click Here</Link></span></small>
+                    <small className="m-1 text-left">Forgot Password ? <span><Link className="text-info" to="/forgotpassword">Click Here</Link></span></small>
                 </div>
                 <div>
-                    <small className="m-1 text-left">Don't Have an Account ? <span><a href="#" onClick={() => switchMode(false)} >Register</a></span></small><br />
+                    <small className="m-1 text-left">Don't Have an Account ? <span><a href="#" className="text-info" onClick={() => switchMode(false)} >Register</a></span></small><br />
                 </div>
             </form>
         </Fragment >

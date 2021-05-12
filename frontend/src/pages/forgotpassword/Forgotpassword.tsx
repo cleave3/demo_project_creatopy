@@ -46,7 +46,7 @@ const Forgotpassword = () => {
                                 <div className="input-group-append">
                                     <span style={{ cursor: "pointer" }} className="input-group-text" id="basic-addon2"><i className="fas fa-at text-dark" aria-hidden="true"></i></span>
                                 </div>
-                                <div className="invalid-feedback">Email is required</div>
+                                <div className="invalid-feedback">A valid email is required</div>
                             </div>
                         </div>
                         <button type="submit" className="btn btn-info  w-100" id="loginbtn" disabled={loading}>
@@ -54,7 +54,7 @@ const Forgotpassword = () => {
                             {loading && <i className="fas fa-pulse fa-spinner text-white"></i>}
                         </button>
                         <div>
-                            <small className="m-1 text-left"><span><Link to="/auth">Back to Login</Link></span></small>
+                            <small className="m-1 text-left"><span><Link to="/auth" className="text-info">Back to Login</Link></span></small>
                         </div>
                     </form>
 

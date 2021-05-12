@@ -96,7 +96,7 @@ const Register = ({ switchMode }) => {
                     {loading && <i className="fas fa-pulse fa-spinner text-white"></i>}
                 </button>
                 <div>
-                    <small className="m-1 text-left">Already Have an Account ? <span><a href="#" rel="noreferrer" onClick={() => switchMode(true)} >Login</a></span></small>
+                    <small className="m-1 text-left">Already Have an Account ? <span><a href="#" className="text-info" rel="noreferrer" onClick={() => switchMode(true)} >Login</a></span></small>
                 </div>
             </form>
         </Fragment >
