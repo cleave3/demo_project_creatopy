@@ -5,6 +5,15 @@ Demo project React / GraphQL/ TypeScript/ Sequelize / NodeJs
 ### How to use the app
 
 1.  On the terminal cd into backend directory run
+    create a .env file and add the following content
+    APP_SECRET= // appsecret for jsonwebtoken
+    MAIL_USER= //email user
+    MAIL_PASS= //email password
+    MAIL_HOST= //email host (could be smtp or gmail)
+    MAIL_PORT= // smtp port (465 for gmail)
+    MAIL_SENDER= // mail sender (e.g "ItemApp" <no-reply@itemapp.com>)
+
+##### The email credentials are need for send email used for password reset flow
 
 ```
     npm install
@@ -22,9 +31,16 @@ Demo project React / GraphQL/ TypeScript/ Sequelize / NodeJs
     npm run migration
 ```
 
-4. Start the backend application
+4.  Start the backend application (Development mode)
 
 ```
+    npm run dev
+```
+
+Start the backend application (Production mode)
+
+```
+    npm  run build
     npm start
 ```
 

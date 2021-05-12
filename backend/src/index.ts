@@ -1,4 +1,4 @@
-import express, { json, Application } from "express";
+import express, { json, Application, Request, Response } from "express";
 import { config } from "dotenv";
 import cors from "cors";
 import { ApolloServer } from "apollo-server-express";
