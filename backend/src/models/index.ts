@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.js')[env];
+const config = require(__dirname + '/../config/config.json')[env];
 
 const sequelize: Sequelize = new Sequelize({ dialect: config.dialect, storage: config.storage });
 

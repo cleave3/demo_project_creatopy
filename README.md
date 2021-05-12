@@ -33,17 +33,10 @@ Demo project React / GraphQL/ TypeScript/ Sequelize / NodeJs
     npm run migration
 ```
 
-4.  Start the backend application (Development mode)
+4.  Start the backend application (locally)
 
 ```
     npm run dev
-```
-
-Start the backend application (Production mode)
-
-```
-    npm  run build
-    npm start
 ```
 
 #### Next
