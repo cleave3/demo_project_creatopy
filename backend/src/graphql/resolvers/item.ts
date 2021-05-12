@@ -4,7 +4,6 @@ import { MutationAddItemArgs, MutationRemoveItemArgs, ItemResponse, RemoveItemRe
 import { IRequest } from "../../interface/IRequest"
 import User from "../../models/user"
 import { ApolloError, AuthenticationError } from "apollo-server-errors"
-import { remove } from "lodash"
 
 export const ItemResolvers: IResolvers = {
     Query: {

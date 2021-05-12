@@ -1,6 +1,6 @@
 export class Http {
-    // private static BASE_URL: string = process.env.NODE_ENV === "production" ? "https://demo-project-creatopy.herokuapp.com" : "http://localhost:5000";
-    private static BASE_URL: string = "https://demo-project-creatopy.herokuapp.com";
+    private static BASE_URL: string = process.env.NODE_ENV === "production" ? "https://demo-project-creatopy.herokuapp.com" : "http://localhost:5000";
+    // private static BASE_URL: string = "https://demo-project-creatopy.herokuapp.com";
 
     static async post(data: any, token = "") {
         const headers = new Headers();
