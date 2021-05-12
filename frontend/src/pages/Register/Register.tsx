@@ -63,7 +63,7 @@ const Register = ({ switchMode }) => {
                         />
                         <div className="invalid-feedback">A valid email is required</div>
                     </div>
-                    <div className="form-group col-md-6">
+                    <div className="form-group col-md-12">
                         <label className="d-none d-md-block">Password</label>
                         <input
                             required
@@ -77,7 +77,7 @@ const Register = ({ switchMode }) => {
                         />
                         <div className="invalid-feedback">Password must be atleast 6 characters long</div>
                     </div>
-                    <div className="form-group col-md-6">
+                    <div className="form-group col-md-12">
                         <label className="d-none d-md-block">Confirm Password</label>
                         <input
                             required

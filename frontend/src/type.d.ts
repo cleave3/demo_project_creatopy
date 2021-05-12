@@ -21,6 +21,7 @@ type UserState = {
     auth: boolean
     name: string
     token: string
+    message: string
 }
 
 type AppState = {

@@ -16,6 +16,16 @@ module.exports = {
       password: {
         type: Sequelize.STRING,
       },
+      resettoken: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
+      },
+      tokenexpiration: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

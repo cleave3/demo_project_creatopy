@@ -12,7 +12,7 @@ const Auth = () => {
 
     return (
         <div className="auth-container">
-            <div className="auth-form-container py-4 px-md-3 px-2 bg-white shadow ">
+            <div className="auth-form-container py-4 px-md-3 px-2 bg-white">
                 <nav className="my-2 d-flex justify-content-center">
                     <button onClick={() => switchMode(true)} className={`auth-switch-button mx-1 ${isLogin && "active text-info"}`}>Login</button>
                     <button onClick={() => switchMode(false)} className={`auth-switch-button mx-1 ${!isLogin && "active text-info"}`}>Register</button>

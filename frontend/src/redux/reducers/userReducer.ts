@@ -5,7 +5,8 @@ const initalState: UserState = {
     auth: false,
     loading: false,
     name: '',
-    token: ""
+    token: "",
+    message: ""
 };
 
 const reducer: Reducer<UserState> = (state = initalState, action) => {
@@ -42,12 +43,32 @@ const reducer: Reducer<UserState> = (state = initalState, action) => {
                 name: action.payload.name,
                 token: action.payload.token
             };
+        case userTypes.FORGOTPASSWORD_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                token: action.payload.token,
+                message: action.payload.message
+            };
+        case userTypes.RESETPASSWORD_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                token: "",
+                message: action.payload.message
+            };
         case userTypes.REGISTERING:
+        case userTypes.INITIATE_FORGOTPASSWORD:
+        case userTypes.INITIATE_RESETPASSWORD:
             return {
                 ...state,
                 loading: true
             };
         case userTypes.REGISTRATION_COMPLETED:
+        case userTypes.FORGOTPASSWPRD_COMPLETED:
+        case userTypes.FORGOTPASSWORD_FAILED:
+        case userTypes.RESETPASSWORD_FAILED:
+        case userTypes.RESETPASSWPRD_COMPLETED:
             return {
                 ...state,
                 loading: false
@@ -63,7 +84,8 @@ const reducer: Reducer<UserState> = (state = initalState, action) => {
                 ...state,
                 auth: false,
                 name: "",
-                token: ""
+                token: "",
+                message: ""
             };
 
 

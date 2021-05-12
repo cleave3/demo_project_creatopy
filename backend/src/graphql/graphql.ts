@@ -26,6 +26,12 @@ export type Creator = {
   name?: Maybe<Scalars['String']>;
 };
 
+export type ForgotPasswordResponse = {
+  __typename?: 'ForgotPasswordResponse';
+  token: Scalars['String'];
+  message: Scalars['String'];
+};
+
 export type Item = {
   __typename?: 'Item';
   id: Scalars['Int'];
@@ -49,13 +55,20 @@ export type Mutation = {
   __typename?: 'Mutation';
   _empty?: Maybe<Scalars['String']>;
   addItem: ItemResponse;
+  forgotPassword: ForgotPasswordResponse;
   register: AuthenticateResponse;
   removeItem: RemoveItemResponse;
+  resetPassword: ResetPasswordResponse;
 };
 
 
 export type MutationAddItemArgs = {
   title: Scalars['String'];
+};
+
+
+export type MutationForgotPasswordArgs = {
+  email: Scalars['String'];
 };
 
 
@@ -68,6 +81,12 @@ export type MutationRegisterArgs = {
 
 export type MutationRemoveItemArgs = {
   itemId: Scalars['Int'];
+};
+
+
+export type MutationResetPasswordArgs = {
+  resettoken: Scalars['Int'];
+  password?: Maybe<Scalars['String']>;
 };
 
 export type Query = {
@@ -89,12 +108,19 @@ export type RemoveItemResponse = {
   title: Scalars['String'];
 };
 
+export type ResetPasswordResponse = {
+  __typename?: 'ResetPasswordResponse';
+  message: Scalars['String'];
+};
+
 export type User = {
   __typename?: 'User';
   id: Scalars['Int'];
   name: Scalars['String'];
   email: Scalars['String'];
   password: Scalars['String'];
+  resettoken: Scalars['Int'];
+  tokenexpiration: Scalars['Int'];
   createdAt: Scalars['String'];
   updateAt?: Maybe<Scalars['String']>;
 };
@@ -180,6 +206,7 @@ export type ResolversTypes = {
   AuthenticateResponse: ResolverTypeWrapper<AuthenticateResponse>;
   String: ResolverTypeWrapper<Scalars['String']>;
   Creator: ResolverTypeWrapper<Creator>;
+  ForgotPasswordResponse: ResolverTypeWrapper<ForgotPasswordResponse>;
   Item: ResolverTypeWrapper<Item>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
   ItemResponse: ResolverTypeWrapper<ItemResponse>;
@@ -188,6 +215,7 @@ export type ResolversTypes = {
   Mutation: ResolverTypeWrapper<{}>;
   Query: ResolverTypeWrapper<{}>;
   RemoveItemResponse: ResolverTypeWrapper<RemoveItemResponse>;
+  ResetPasswordResponse: ResolverTypeWrapper<ResetPasswordResponse>;
   User: ResolverTypeWrapper<User>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
 };
@@ -197,6 +225,7 @@ export type ResolversParentTypes = {
   AuthenticateResponse: AuthenticateResponse;
   String: Scalars['String'];
   Creator: Creator;
+  ForgotPasswordResponse: ForgotPasswordResponse;
   Item: Item;
   Int: Scalars['Int'];
   ItemResponse: ItemResponse;
@@ -205,6 +234,7 @@ export type ResolversParentTypes = {
   Mutation: {};
   Query: {};
   RemoveItemResponse: RemoveItemResponse;
+  ResetPasswordResponse: ResetPasswordResponse;
   User: User;
   Boolean: Scalars['Boolean'];
 };
@@ -217,6 +247,12 @@ export type AuthenticateResponseResolvers<ContextType = any, ParentType extends 
 
 export type CreatorResolvers<ContextType = any, ParentType extends ResolversParentTypes['Creator'] = ResolversParentTypes['Creator']> = {
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ForgotPasswordResponseResolvers<ContextType = any, ParentType extends ResolversParentTypes['ForgotPasswordResponse'] = ResolversParentTypes['ForgotPasswordResponse']> = {
+  token?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  message?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -248,8 +284,10 @@ export interface JsonObjectScalarConfig extends GraphQLScalarTypeConfig<Resolver
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
   _empty?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   addItem?: Resolver<ResolversTypes['ItemResponse'], ParentType, ContextType, RequireFields<MutationAddItemArgs, 'title'>>;
+  forgotPassword?: Resolver<ResolversTypes['ForgotPasswordResponse'], ParentType, ContextType, RequireFields<MutationForgotPasswordArgs, 'email'>>;
   register?: Resolver<ResolversTypes['AuthenticateResponse'], ParentType, ContextType, RequireFields<MutationRegisterArgs, 'name' | 'email' | 'password'>>;
   removeItem?: Resolver<ResolversTypes['RemoveItemResponse'], ParentType, ContextType, RequireFields<MutationRemoveItemArgs, 'itemId'>>;
+  resetPassword?: Resolver<ResolversTypes['ResetPasswordResponse'], ParentType, ContextType, RequireFields<MutationResetPasswordArgs, 'resettoken'>>;
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
@@ -264,11 +302,18 @@ export type RemoveItemResponseResolvers<ContextType = any, ParentType extends Re
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
+export type ResetPasswordResponseResolvers<ContextType = any, ParentType extends ResolversParentTypes['ResetPasswordResponse'] = ResolversParentTypes['ResetPasswordResponse']> = {
+  message?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type UserResolvers<ContextType = any, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   password?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  resettoken?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  tokenexpiration?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   createdAt?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   updateAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
@@ -277,6 +322,7 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
 export type Resolvers<ContextType = any> = {
   AuthenticateResponse?: AuthenticateResponseResolvers<ContextType>;
   Creator?: CreatorResolvers<ContextType>;
+  ForgotPasswordResponse?: ForgotPasswordResponseResolvers<ContextType>;
   Item?: ItemResolvers<ContextType>;
   ItemResponse?: ItemResponseResolvers<ContextType>;
   JSON?: GraphQLScalarType;
@@ -284,6 +330,7 @@ export type Resolvers<ContextType = any> = {
   Mutation?: MutationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   RemoveItemResponse?: RemoveItemResponseResolvers<ContextType>;
+  ResetPasswordResponse?: ResetPasswordResponseResolvers<ContextType>;
   User?: UserResolvers<ContextType>;
 };
 

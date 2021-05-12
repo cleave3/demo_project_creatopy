@@ -7,7 +7,8 @@ import Auth from './pages/Auth/Auth';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Home from './pages/Home/Home';
 import NotFound from './pages/notfound/NotFound';
-// import Forgotpassword from './pages/forgotpassword/Forgotpassword';
+import Forgotpassword from './pages/forgotpassword/Forgotpassword';
+import Resetpassword from './pages/resetpassword/Resetpassword';
 
 const App = () => {
   return (
@@ -20,11 +21,16 @@ const App = () => {
             <UnProtectedRoute exact path="/auth">
               <Auth />
             </UnProtectedRoute>
+            <UnProtectedRoute exact path="/forgotpassword">
+              <Forgotpassword />
+            </UnProtectedRoute>
+            <UnProtectedRoute exact path="/resetpassword">
+              <Resetpassword />
+            </UnProtectedRoute>
             <ProtectedRoute exact path="/dashboard">
               <Dashboard />
             </ProtectedRoute>
             <Route exact path='*' component={NotFound} />
-            {/* <Route exact path="/forgotpassword" component={Forgotpassword} /> */}
           </Switch>
         </div>
       </BrowserRouter>

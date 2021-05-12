@@ -8,6 +8,8 @@ interface UserAttributes {
   name: string;
   password: string;
   email: string;
+  resettoken?: number;
+  tokenexpiration?: number;
 }
 
 interface UserCreationAttributes extends Optional<UserAttributes, "id"> { }
@@ -38,6 +40,16 @@ const User = sequelize.define<UserInstance>("User", {
     allowNull: false,
     type: DataTypes.STRING,
   },
+  resettoken: {
+    allowNull: false,
+    type: DataTypes.INTEGER,
+    defaultValue: 0,
+  },
+  tokenexpiration: {
+    allowNull: false,
+    type: DataTypes.INTEGER,
+    defaultValue: 0,
+  }
 })
 
 User.beforeCreate(user => {

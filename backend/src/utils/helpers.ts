@@ -20,6 +20,10 @@ class Helper {
         return bcrypt.compareSync(password, hash);
     }
 
+    static genHash(password: string): string {
+        return bcrypt.hashSync(password, 10);
+    }
+
 }
 
 export default Helper;
