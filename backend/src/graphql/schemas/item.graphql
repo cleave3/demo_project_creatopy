@@ -1,3 +1,5 @@
+scalar DateTime
+
 type Item {
   id: Int!
   title: String!
@@ -23,7 +25,7 @@ type ItemResponse {
   id: Int!
   title: String!
   creator: Creator!
-  createdAt: String!
+  createdAt: DateTime!
 }
 
 type RemoveItemResponse {

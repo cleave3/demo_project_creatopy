@@ -11,6 +11,7 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
+  DateTime: any;
   JSON: any;
   JSONObject: any;
 };
@@ -25,6 +26,7 @@ export type Creator = {
   __typename?: 'Creator';
   name?: Maybe<Scalars['String']>;
 };
+
 
 export type ForgotPasswordResponse = {
   __typename?: 'ForgotPasswordResponse';
@@ -46,7 +48,7 @@ export type ItemResponse = {
   id: Scalars['Int'];
   title: Scalars['String'];
   creator: Creator;
-  createdAt: Scalars['String'];
+  createdAt: Scalars['DateTime'];
 };
 
 
@@ -206,6 +208,7 @@ export type ResolversTypes = {
   AuthenticateResponse: ResolverTypeWrapper<AuthenticateResponse>;
   String: ResolverTypeWrapper<Scalars['String']>;
   Creator: ResolverTypeWrapper<Creator>;
+  DateTime: ResolverTypeWrapper<Scalars['DateTime']>;
   ForgotPasswordResponse: ResolverTypeWrapper<ForgotPasswordResponse>;
   Item: ResolverTypeWrapper<Item>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
@@ -225,6 +228,7 @@ export type ResolversParentTypes = {
   AuthenticateResponse: AuthenticateResponse;
   String: Scalars['String'];
   Creator: Creator;
+  DateTime: Scalars['DateTime'];
   ForgotPasswordResponse: ForgotPasswordResponse;
   Item: Item;
   Int: Scalars['Int'];
@@ -250,6 +254,10 @@ export type CreatorResolvers<ContextType = any, ParentType extends ResolversPare
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
+export interface DateTimeScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['DateTime'], any> {
+  name: 'DateTime';
+}
+
 export type ForgotPasswordResponseResolvers<ContextType = any, ParentType extends ResolversParentTypes['ForgotPasswordResponse'] = ResolversParentTypes['ForgotPasswordResponse']> = {
   token?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   message?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -269,7 +277,7 @@ export type ItemResponseResolvers<ContextType = any, ParentType extends Resolver
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   creator?: Resolver<ResolversTypes['Creator'], ParentType, ContextType>;
-  createdAt?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  createdAt?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -322,6 +330,7 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
 export type Resolvers<ContextType = any> = {
   AuthenticateResponse?: AuthenticateResponseResolvers<ContextType>;
   Creator?: CreatorResolvers<ContextType>;
+  DateTime?: GraphQLScalarType;
   ForgotPasswordResponse?: ForgotPasswordResponseResolvers<ContextType>;
   Item?: ItemResolvers<ContextType>;
   ItemResponse?: ItemResponseResolvers<ContextType>;

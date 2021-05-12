@@ -28,7 +28,7 @@ const Item = sequelize.define<ItemInstance>("Item", {
     user_id: {
         allowNull: false,
         type: DataTypes.INTEGER,
-    },
+    }
 })
 
 export default Item;
