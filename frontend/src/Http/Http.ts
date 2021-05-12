@@ -1,5 +1,5 @@
 export class Http {
-    private static BASE_URL: string = "http://localhost:5000/graphql"
+    private static BASE_URL: string = "https://demo-project-creatopy.herokuapp.com/graphql"
 
     static async post(data: any, token = "") {
         const headers = new Headers();
