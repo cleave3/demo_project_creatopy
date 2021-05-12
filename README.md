@@ -15,7 +15,7 @@ Demo project React / GraphQL/ TypeScript/ Sequelize / NodeJs
     MAIL_SENDER= // mail sender (e.g "ItemApp" <no-reply@itemapp.com>)
     ```
 
-##### The email credentials are need for send email used for password reset flow
+##### The email credentials are needed for sending email during password reset flow
 
 ```
     npm install
