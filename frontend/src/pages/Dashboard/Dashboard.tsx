@@ -101,7 +101,7 @@ const Dashboard = () => {
                                     <i className="fas fa-box-open fa-3x"></i>
                                 </div>
                             </div>}
-                            {items.map((data) => <ListItem key={data.id} data={data} deleteAction={deleteAction} />)}
+                            {!loading && items.map((data) => <ListItem key={data.id} data={data} deleteAction={deleteAction} />)}
                         </div>
                     </div>
                 </div>

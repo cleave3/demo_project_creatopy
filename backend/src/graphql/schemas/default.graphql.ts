@@ -1,3 +1,6 @@
+import { gql } from "apollo-server-express"
+
+export default gql`
 scalar JSON
 scalar JSONObject
 
@@ -7,4 +10,4 @@ type Query {
 
 type Mutation {
   _empty: String
-}
+}`;

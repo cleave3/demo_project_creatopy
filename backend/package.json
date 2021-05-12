@@ -2,9 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "dev": "nodemon src/index.ts",
+    "start": "npm run build && node build/index.js",
+    "build": "tsc -p .",
     "migration": "sequelize db:migrate",
     "undo-migration": "sequelize db:migrate:undo:all",
     "codegen": "graphql-codegen --config codegen.yml"

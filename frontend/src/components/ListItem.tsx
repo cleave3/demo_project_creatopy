@@ -12,7 +12,7 @@ const ListItem = ({ data, deleteAction }) => {
             <div className="card-footer">
                 <div className="d-flex justify-content-between">
                     <div className="creator">created by  <em>{data.creator.name}</em> </div>
-                    <div className="time"><em>created At </em> {moment(new Date(data.createdAt)).format("LLLL")}</div>
+                    <div className="time"><em>created At </em> {moment(new Date(String(data.createdAt))).format("LLLL")}</div>
                 </div>
             </div>
         </div>
