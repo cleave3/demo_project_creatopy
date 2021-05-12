@@ -10,7 +10,7 @@ Demo project React / GraphQL/ TypeScript/ Sequelize / NodeJs
     APP_SECRET= // appsecret for jsonwebtoken
     MAIL_USER= //email user
     MAIL_PASS= //email password
-    MAIL_HOST= //email host (could be smtp or gmail)
+    MAIL_HOST= //email host (could be your smtp server or smtp.gmail.com)
     MAIL_PORT= // smtp port (465 for gmail)
     MAIL_SENDER= // mail sender (e.g "ItemApp" <no-reply@itemapp.com>)
     ```
