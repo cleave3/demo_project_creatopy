@@ -24,7 +24,6 @@ const Login = ({ switchMode }) => {
                           }
                     }
                 `}
-            console.log(email.current.value)
             dispatch(login(data));
         }
     }
