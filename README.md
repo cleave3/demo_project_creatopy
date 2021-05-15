@@ -30,7 +30,7 @@ Demo project React / GraphQL/ TypeScript/ Sequelize / NodeJs
 3. To Undo the Migration, Run
 
 ```
-    npm run migration
+    npm run undo-migration
 ```
 
 4.  Start the backend application (locally)
