@@ -17,7 +17,8 @@ app.use(checkAuth);
 const apolloServer = new ApolloServer({
     schema,
     context: ({ req }) => req,
-    formatError: error => ({ message: error.message })
+    formatError: error => ({ message: error.message }),
+    formatResponse: res => res.http
 });
 
 apolloServer.applyMiddleware({ app, path: '/graphql' });
