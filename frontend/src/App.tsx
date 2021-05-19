@@ -38,6 +38,4 @@ const App = () => {
   );
 }
 
-window.addEventListener("close", () => sessionStorage.clear())
-
 export default App
